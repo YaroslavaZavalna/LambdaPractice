@@ -13,6 +13,12 @@ public class Cinema {
                 .collect(Collectors.groupingBy(Movie::getGenre, Collectors.averagingDouble(Movie::getPrice)));
         System.out.println(movies);
         System.out.println(avgPRICE);
+
+        List<Movie> movies2 = buildMovieList();
+        Map<Genre, Double> avgPRICE2 = movies2.stream()
+                .collect(Collectors.groupingBy(Movie::getGenre, Collectors.averagingDouble(Movie::getPrice)));
+        System.out.println(movies2);
+        System.out.println(avgPRICE2);
     }
     private static List<Movie>buildMovieList(){
         List<Movie> movieList = new ArrayList<>();
